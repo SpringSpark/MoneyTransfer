@@ -2,9 +2,15 @@ package model;
 
 import exceptions.DataValidationException;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Client {
     private String name;
     private String surname;
+    @Id
     private int account;
 
     public Client(int account, String name, String surname) {
@@ -15,6 +21,8 @@ public class Client {
         this.surname = surname;
         this.account = account;
     }
+
+    public Client(){}
 
     public String getName() {
         return name;
@@ -40,4 +48,12 @@ public class Client {
         this.account = account;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", account=" + account +
+                '}';
+    }
 }

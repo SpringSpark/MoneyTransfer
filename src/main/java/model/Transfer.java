@@ -2,7 +2,15 @@ package model;
 
 import exceptions.DataValidationException;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Transfer {
+    @Id
+    @GeneratedValue
+    private int id;
     private int senderAccount;
     private int receiverAccount;
     private int amount;
@@ -15,6 +23,8 @@ public class Transfer {
         this.receiverAccount = receiverAccount;
         this.amount = amount;
     }
+
+    public Transfer() {}
 
     public int getSenderAccount() {
         return senderAccount;
@@ -38,5 +48,13 @@ public class Transfer {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
