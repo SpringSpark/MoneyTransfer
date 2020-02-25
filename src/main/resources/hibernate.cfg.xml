@@ -11,7 +11,5 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <mapping class="model.Client"/>
-        <mapping class="model.Transfer"/>
     </session-factory>
 </hibernate-configuration>
