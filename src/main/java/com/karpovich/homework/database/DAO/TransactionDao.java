@@ -1,6 +1,5 @@
 package com.karpovich.homework.database.DAO;
 
-import com.karpovich.homework.database.Database;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.resource.transaction.spi.TransactionStatus;

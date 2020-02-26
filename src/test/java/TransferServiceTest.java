@@ -1,7 +1,6 @@
 import com.karpovich.homework.database.DAO.AccountDao;
 import com.karpovich.homework.database.DAO.TransactionDao;
 import com.karpovich.homework.database.DAO.TransferDao;
-import com.karpovich.homework.database.service.AccountService;
 import com.karpovich.homework.database.service.TransferService;
 import com.karpovich.homework.exceptions.DataValidationException;
 import com.karpovich.homework.model.Account;

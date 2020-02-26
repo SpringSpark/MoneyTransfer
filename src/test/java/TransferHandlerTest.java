@@ -1,8 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.karpovich.homework.api.AccountHandler;
 import com.karpovich.homework.api.ResponseCode;
 import com.karpovich.homework.api.TransferHandler;
-import com.karpovich.homework.database.service.AccountService;
 import com.karpovich.homework.database.service.TransferService;
 import com.karpovich.homework.model.Account;
 import com.sun.net.httpserver.HttpExchange;
@@ -36,7 +34,7 @@ public class TransferHandlerTest {
         when(httpExchange.getResponseBody()).thenReturn(outputStream);
 
         Account account = new Account(1, 100);
-        when( objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
+        when(objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
 
         transferHandler.handleCreate(httpExchange);
 
@@ -126,7 +124,7 @@ public class TransferHandlerTest {
         when(httpExchange.getResponseBody()).thenReturn(outputStream);
 
         Account account = new Account(1, 100);
-        when( objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
+        when(objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
 
         transferHandler.handleGet(httpExchange);
 

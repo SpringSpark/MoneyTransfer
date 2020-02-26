@@ -1,6 +1,6 @@
 package com.karpovich.homework.api;
 
-public enum  ResponseCode {
+public enum ResponseCode {
     SUCCESS(200),
     INVALID_REQUEST(400),
     NOT_FOUND(404),

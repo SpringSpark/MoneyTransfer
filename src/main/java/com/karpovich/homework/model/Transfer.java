@@ -29,7 +29,8 @@ public class Transfer {
         this.amount = amount;
     }
 
-    public Transfer() {}
+    public Transfer() {
+    }
 
     public long getSenderAccount() {
         return senderAccount;

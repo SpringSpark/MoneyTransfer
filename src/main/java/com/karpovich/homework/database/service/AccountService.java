@@ -6,8 +6,6 @@ import com.karpovich.homework.exceptions.DataValidationException;
 import com.karpovich.homework.exceptions.DatabaseException;
 import com.karpovich.homework.model.Account;
 
-import java.util.List;
-
 public class AccountService {
     private final AccountDao accountDao;
     private final TransactionDao transactionDao;
@@ -26,7 +24,7 @@ public class AccountService {
         Account accountFind = accountDao.get(account.getId());
         transactionDao.finishTransaction();
 
-        if(accountFind != null) {
+        if (accountFind != null) {
             throw new DataValidationException("Account with this id already exists");
         }
 

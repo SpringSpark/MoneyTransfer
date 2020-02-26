@@ -1,14 +1,10 @@
 package com.karpovich.homework.database.DAO;
 
-import com.karpovich.homework.database.Database;
 import com.karpovich.homework.exceptions.DatabaseException;
 import com.karpovich.homework.model.Account;
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.exception.DataException;
-
-import java.util.List;
 
 public class AccountDao implements Dao<Account> {
 

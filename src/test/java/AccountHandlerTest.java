@@ -2,7 +2,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.karpovich.homework.api.AccountHandler;
 import com.karpovich.homework.api.ResponseCode;
 import com.karpovich.homework.database.service.AccountService;
-import com.karpovich.homework.exceptions.DataValidationException;
 import com.karpovich.homework.model.Account;
 import com.sun.net.httpserver.HttpExchange;
 import org.junit.jupiter.api.Test;
@@ -35,7 +34,7 @@ public class AccountHandlerTest {
         when(httpExchange.getResponseBody()).thenReturn(outputStream);
 
         Account account = new Account(1, 100);
-        when( objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
+        when(objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
 
         accountHandler.handleCreate(httpExchange);
 
@@ -110,7 +109,7 @@ public class AccountHandlerTest {
         when(httpExchange.getResponseBody()).thenReturn(outputStream);
 
         Account account = new Account(1, 100);
-        when( objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
+        when(objectMapper.writeValueAsString(any(Account.class))).thenReturn(account.toString());
 
         accountHandler.handleGet(httpExchange);
 

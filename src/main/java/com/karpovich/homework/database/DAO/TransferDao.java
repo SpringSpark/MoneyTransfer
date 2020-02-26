@@ -1,13 +1,10 @@
 package com.karpovich.homework.database.DAO;
 
-import com.karpovich.homework.database.Database;
 import com.karpovich.homework.exceptions.DatabaseException;
 import com.karpovich.homework.model.Transfer;
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-
-import java.util.List;
 
 public class TransferDao implements Dao<Transfer> {
 
