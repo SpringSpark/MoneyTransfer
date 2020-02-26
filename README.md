@@ -9,3 +9,8 @@ localhost:8000/api/account/get?id={id}
 localhost:8000/api/transfer/create?sender={sender}&receiver={receiver}&amount={amount}
 
 localhost:8000/api/transfer/get?id={id}
+
+# Technology stack:
+Log4j
+Hibernate
+H2
