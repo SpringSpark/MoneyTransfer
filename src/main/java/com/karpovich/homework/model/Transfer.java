@@ -24,9 +24,6 @@ public class Transfer {
     private long amount;
 
     public Transfer(long senderAccount, long receiverAccount, long amount) throws DataValidationException {
-        if (senderAccount < 0 || receiverAccount < 0 || amount < 0) {
-            throw new DataValidationException("Invalid transfer data");
-        }
         this.senderAccount = senderAccount;
         this.receiverAccount = receiverAccount;
         this.amount = amount;

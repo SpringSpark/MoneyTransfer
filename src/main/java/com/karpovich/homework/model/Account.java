@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-@Table(name = "account")
+
 @Entity
 @NamedQueries({
         @NamedQuery(name = "model.Account.findAll",
@@ -28,7 +28,7 @@ public class Account {
     @Version
     private int version;
 
-    public Account(int id, int amount) {
+    public Account(long id, long amount) {
         this.id = id;
         this.amount = amount;
     }

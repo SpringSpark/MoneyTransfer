@@ -1,36 +1,43 @@
 package com.karpovich.homework.database.DAO;
 
+import com.karpovich.homework.database.Database;
+import com.karpovich.homework.exceptions.DatabaseException;
 import com.karpovich.homework.model.Account;
-import org.hibernate.SessionFactory;
+import org.hibernate.Hibernate;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.exception.DataException;
 
 import java.util.List;
 
 public class AccountDao implements Dao<Account> {
 
+    private final Session session;
+
+    public AccountDao(Session session) {
+        this.session = session;
+    }
 
     @Override
     public Account get(long id) {
-        return null;
+        Account account;
+        try {
+            account = session.get(Account.class, id);
+            Hibernate.initialize(account);
+
+        } catch (HibernateException e) {
+            System.out.println("Account with id " + id + " is not found:" + e.getMessage());
+            account = null;
+        }
+        return account;
     }
 
     @Override
-    public List<Account> getAll() {
-        //return list(namedQuery("model.Account.findAll"));
-        return null;
-    }
-
-    @Override
-    public void save(Account account) {
-
-    }
-
-    @Override
-    public void update(Account account, String[] params) {
-
-    }
-
-    @Override
-    public void delete(Account account) {
-
+    public void save(Account account) throws DatabaseException {
+        try {
+            session.save(account);
+        } catch (HibernateException e) {
+            throw new DatabaseException(e.getMessage());
+        }
     }
 }

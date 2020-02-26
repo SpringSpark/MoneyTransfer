@@ -39,4 +39,6 @@ public class Database {
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+
+
 }
